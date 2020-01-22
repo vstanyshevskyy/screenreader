@@ -4,7 +4,7 @@ This is super-simple screen reader that gets the list of focusable elements and 
 IMPORTANT: IT'S STILL WORK IN PROGRESS, SO YOU SHOULDN'T RELY ON IT
 
 ## Motivation
-I speak ukrainian, and in my spare time I work on the website for ukrainian NGO. Unfortunately despite the efforts i put into web accessibility there, the content there is still not available, because all the OS except ChromeOS don't have Ukrainian TTS voice.
+I speak ukrainian, and in my spare time I work on the website for ukrainian NGO. Unfortunately despite the efforts I put into web accessibility there, the content there is still not available to 100% of visitors, because all the OS except ChromeOS don't have Ukrainian TTS voice.
 Give Google TTS API low prices and great quality of the speech synthesised I believe such reader has to be done.
 
 ## Developing

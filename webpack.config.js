@@ -23,7 +23,8 @@ var options = {
   entry: {
     popup: path.join(__dirname, "src", "js", "popup.js"),
     options: path.join(__dirname, "src", "js", "options.js"),
-    background: path.join(__dirname, "src", "js", "background.js")
+    background: path.join(__dirname, "src", "js", "background.js"),
+    content_script: path.join(__dirname, "src", "js", "content_script.js")
   },
   output: {
     path: path.join(__dirname, "build"),
@@ -53,11 +54,14 @@ var options = {
   },
   plugins: [
     // clean the build folder
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin({
+    //   cleanOnceBeforeBuildPatterns: ['**/*', '!manifest.json'],
+    // }),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(["NODE_ENV"]),
     new CopyWebpackPlugin([{
       from: "src/manifest.json",
+      force: true,
       transform: function (content, path) {
         // generates the manifest file using the package.json informations
         return Buffer.from(JSON.stringify({
@@ -66,7 +70,11 @@ var options = {
           ...JSON.parse(content.toString())
         }))
       }
-    }]),
+    },
+    {
+      from: "src/css/content.css",
+    }
+    ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "popup.html"),
       filename: "popup.html",

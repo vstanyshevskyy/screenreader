@@ -7,6 +7,12 @@ IMPORTANT: IT'S STILL WORK IN PROGRESS, SO YOU SHOULDN'T RELY ON IT
 I speak ukrainian, and in my spare time I work on the website for ukrainian NGO. Unfortunately despite the efforts I put into web accessibility there, the content there is still not available to 100% of visitors, because all the OS except ChromeOS don't have Ukrainian TTS voice.
 Give Google TTS API low prices and great quality of the speech synthesised I believe such reader has to be done.
 
+## How to use it
+1. Navigate to any page
+2. Enable needed TTS in extension dialog
+3. Go through the elements on the page using `Ctrl + Option + Up / Down Arrow`
+4. Listen to the synthesised voice
+
 ## Developing
 1. Fork
 2. Run `yarn`

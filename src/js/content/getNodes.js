@@ -18,8 +18,7 @@ const getNodes = () => {
         }
         return NodeFilter.FILTER_SKIP;
       }
-    },
-    false
+    }
   );
 
   const elements = [];

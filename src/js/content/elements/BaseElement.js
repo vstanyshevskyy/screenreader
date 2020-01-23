@@ -18,7 +18,7 @@ class BaseElement {
   }
   
   isUnacceptable() {
-    return this.node.nodeName === 'SCRIPT' || this.node.nodeName === 'NOSCRIPT';
+    return ['SCRIPT', 'NOSCRIPT'].indexOf(this.node.nodeName) !== -1;
   }
   
   isHidden() {
@@ -51,26 +51,13 @@ class BaseElement {
   }
 
   getContent() {
-    const content = this.node.textContent.trim();
-
-		if (this.node.getAttribute('aria-label') ) {
-			return this.node.getAttribute('aria-label');
-		} else if (this.node.getAttribute('alt') ) {
-			return this.node.getAttribute('alt');
-		}
-
-		return content;
+    return this.node.textContent.trim()
+      || this.node.getAttribute('aria-label')
+      || this.node.getAttribute('alt');
   }
 
   getRole() {
-    const name = this.node.tagName;
-    let role = name;
-
-		if (this.node.getAttribute('role')) {
-			role = this.node.getAttribute('role');
-		}
-
-		return role || 'default';
+		return this.node.getAttribute('role') || this.node.tagName;
 	}
 
   toString() {

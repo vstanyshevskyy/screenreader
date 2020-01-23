@@ -24,7 +24,6 @@ class TextElement extends BaseElement {
   }
 
   highlight() {
-    var parent = this.node.parentNode;
     var span = document.createElement('span');
     span.appendChild(document.createTextNode(this.node.nodeValue));
     this.node.replaceWith(span);

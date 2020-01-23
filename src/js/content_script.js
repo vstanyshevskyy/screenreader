@@ -42,10 +42,7 @@ chrome.runtime.onMessage.addListener(
 );
 
 (function(document) {
-  consoleTts.enable();
-  // googleTts.enable();
   const nodesList = getNodes();
-  console.log(nodesList);
 
   let currentElement = nodesList.getCurrentElement();
   var keyboardHandler = function(e) {
